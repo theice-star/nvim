@@ -51,7 +51,7 @@ set softtabstop=2
 set autoindent
 set list
 set listchars=tab:\|\ ,trail:▫
-set scrolloff=4
+set scrolloff=10
 set ttimeoutlen=0
 set notimeout
 set viewoptions=cursor,folds,slash,unix
@@ -134,6 +134,9 @@ noremap S :w<CR>
 noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 noremap <LEADER>rv :e .nvimrc<CR>
 
+" Source Nvimrc everywhere
+nnoremap <LEADER>R :source $MYVIMRC<CR>
+
 " make Y to copy till the end of the line
 nnoremap Y y$
 
@@ -207,7 +210,7 @@ noremap qf <C-w>o
 noremap s <nop>
 
 " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
-noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap sk :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
 noremap sj :set splitbelow<CR>:split<CR>
 noremap sh :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
 noremap sl :set splitright<CR>:vsplit<CR>
@@ -221,6 +224,20 @@ noremap <right> :vertical resize+5<CR>
 
 
 " ===
+" === Tab Manager
+" ===
+" Create a new tab with tu
+nnoremap tu :tabe<CR>
+" Move around tabs with tn and ti
+nnoremap tp :-tabnext<CR>
+nnoremap tn :+tabnext<CR>
+" Move the tabs with tmn and tmi
+nnoremap tmn :-tabmove<CR>
+nnoremap tmi :+tabmove<CR>
+nnoremap tc :tabclose<CR>
+
+
+" ===
 " === Markdown Settings
 " ===
 " Snippets
@@ -230,13 +247,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 
 
-" ===
-" === Install Plugins with Vim-Plug
-" ===
-source /home/david/.config/nvim/moudle/plugins.vim
+" Install Plugins with Vim-Plug
+source ~/.config/nvim/moudle/plugins.vim
 
-
-" ===
-" === Plugins Config
-" ===
-source /home/david/.config/nvim/moudle/plugins-config.vim
+" Plugins Config
+source ~/.config/nvim/moudle/plugins-config.vim

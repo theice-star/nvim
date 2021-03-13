@@ -88,7 +88,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> <LEADER>K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -113,7 +113,49 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 
 " ===
-" === Cocplugins Keymaps
+" === Coc-plugins Keymaps
 " ===
 nnoremap tt :CocCommand explorer<CR>
 nnoremap mm :CocList marketplace<CR>
+nnoremap tl :CocCommand translator.popup<CR>
+
+imap <C-l> <Plug>(coc-snippets-expand)
+vmap <C-j> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+xmap <leader>x  <Plug>(coc-convert-snippet)
+let g:snips_author = 'TheIce-Star'
+
+
+
+" ===
+" === Undotree
+" ===
+nnoremap ut :UndotreeToggle<CR>
+let g:undotree_DiffAutoOpen = 1
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_ShortIndicators = 1
+let g:undotree_WindowLayout = 2
+let g:undotree_DiffpanelHeight = 8
+let g:undotree_SplitWidth = 24
+let g:undotree_ShortIndicators = 1
+let g:undotree_WindowLayout = 2
+let g:undotree_DiffpanelHeight = 8
+let g:undotree_SplitWidth = 24
+function g:Undotree_CustomMap()
+ nmap <buffer> k <plug>UndotreeNextState
+ nmap <buffer> j <plug>UndotreePreviousState
+ nmap <buffer> K 5<plug>UndotreeNextState
+ nmap <buffer> J 5<plug>UndotreePreviousState
+endfunc
+
+
+
+" ===
+" === FZF.vim
+" ===
+nnoremap <C-p> :FZF<CR>
+
+let g:fzf_preview_window = 'right:60%'
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'

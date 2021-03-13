@@ -55,5 +55,15 @@
       }
     }
   },
-  "explorer.icon.enableNerdfont": true
+  "explorer.file.column.indent.indentLine": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.buffer.showHiddenBuffers": true,
+  "explorer.git.showIgnored": true,
+  "snippets.ultisnips.enable": true,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "$HOME/.config/nvim/UltiSnips/",
+    "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
+  ]
 }

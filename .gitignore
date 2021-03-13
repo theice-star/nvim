@@ -1,2 +1,5 @@
 tmp/
 plugged/
+node_modules/
+package.json
+yarn.lock
