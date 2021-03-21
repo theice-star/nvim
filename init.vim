@@ -121,6 +121,39 @@ let g:terminal_color_14 = '#9AEDFE'
 " ===
 " === Basic Mappings
 " ===
+" Functions
+nnoremap r :call Complete()<CR>
+function Complete()
+	exec "w"
+	if &filetype == 'c'
+		execute "!gcc % -o $<"
+		execute "!time ./%<"
+		execute "!time ./%<"
+	elseif &filetype == 'cpp'
+		set splitbelow
+		execute "!g++ -std=c++11 % -Wall -o $<"
+		:sp
+		:res -15
+		:term ./%<
+	elseif &filetype == 'java'
+		execute "!javac %"
+		execute "!time java %<"
+	elseif &filetype == 'sh'
+		:!time bash %
+	elseif &filetype == 'python'
+		set splitbelow
+		:sp
+		:term python3 %
+	elseif &filetype == 'html'
+		silent! execute "！".g:mkdp_browser." % &"
+	elseif &filetype == 'markdown'
+		execute "MarkdownPreview"
+	elseif &filetype == 'go'
+		set splitbelow
+		:sp
+		:term go run
+	endif
+endfunction
 " Set <LEADER> as <SPACE>, ; as :
 let mapleader=" "
 noremap ; :

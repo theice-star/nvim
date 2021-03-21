@@ -2,7 +2,9 @@
 " === Dress up my vim
 " ===
 " set thme
-color deus
+colorscheme oceanic_material
+set background=dark
+
 
 
 
@@ -10,28 +12,18 @@ color deus
 " === Coc.nvim
 " ===
 let g:coc_global_extensions = [
-	\ 'coc-css',
-	\ 'coc-diagnostic',
 	\ 'coc-explorer',
-	\ 'coc-flutter-tools',
-	\ 'coc-gitignore',
 	\ 'coc-html',
 	\ 'coc-json',
 	\ 'coc-lists',
 	\ 'coc-prettier',
 	\ 'coc-pyright',
 	\ 'coc-python',
+	\ 'coc-json',
 	\ 'coc-snippets',
-	\ 'coc-sourcekit',
-	\ 'coc-stylelint',
 	\ 'coc-syntax',
-	\ 'coc-tasks',
 	\ 'coc-translator',
-	\ 'coc-tslint-plugin',
-	\ 'coc-tsserver',
-	\ 'coc-vetur',
 	\ 'coc-vimlsp',
-	\ 'coc-yaml',
 	\ 'coc-yank']
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
@@ -115,7 +107,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " ===
 " === Coc-plugins Keymaps
 " ===
-nnoremap tt :CocCommand explorer<CR>
+nnoremap <LEADER>e :CocCommand explorer<CR>
 nnoremap mm :CocList marketplace<CR>
 nnoremap tl :CocCommand translator.popup<CR>
 
@@ -159,3 +151,12 @@ nnoremap <C-p> :FZF<CR>
 
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+
+
+" ===
+" === vim-word
+" ===
+let g:apc_enable_ft = {'text':1, 'markdown':1, 'php':1}
+set cpt=.,k,w,b
+set completeopt=menu,menuone,noselect
