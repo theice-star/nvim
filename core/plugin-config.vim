@@ -2,16 +2,21 @@
 " === Dress up my vim
 " ===
 " set thme
-colorscheme oceanic_material
+colorscheme deus
 set background=dark
-
-
-
+" set status line
+let g:spaceline_seperate_style = 'none'
+let g:spaceline_colorscheme = 'space'
+" ===
+" === dashboard
+" ===
+let g:dashboard_default_header='transformer'
 
 " ===
 " === Coc.nvim
 " ===
 let g:coc_global_extensions = [
+	\ 'coc-pairs',
 	\ 'coc-explorer',
 	\ 'coc-html',
 	\ 'coc-json',
@@ -155,8 +160,27 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 
 
 " ===
-" === vim-word
+" === vim-clap
 " ===
-let g:apc_enable_ft = {'text':1, 'markdown':1, 'php':1}
-set cpt=.,k,w,b
-set completeopt=menu,menuone,noselect
+let g:clap_theme = 'material_design_dark'
+
+
+
+" ===
+" === asyncrun
+" ===
+" auto open asyncrun , hight is 6
+let g:asyncrun_open = 6
+
+" over time
+let g:asyncrun_bell = 1
+
+" set map noremal <F10> to open asyncrun
+nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
+
+
+
+" ===
+" === vim-rainbow
+" ===
+let g:rainbow_active = 1

@@ -59,6 +59,7 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.buffer.showHiddenBuffers": true,
+  "explorer.width": 20,
   "explorer.git.showIgnored": true,
   "snippets.ultisnips.enable": true,
   "snippets.ultisnips.directories": [
