@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged/')
 Plug 'glepnir/dashboard-nvim'
 " Pretty Dress
 Plug 'glepnir/oceanic-material'
+
 " Status line
 Plug 'glepnir/spaceline.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -13,8 +14,8 @@ Plug 'ryanoasis/vim-devicons'
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " File Search
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': ['Leaderf']}
+Plug 'junegunn/fzf.vim', {'on': ['FZF']}
 " File Tree
 " Snippets
 Plug 'honza/vim-snippets'
@@ -26,13 +27,16 @@ Plug 'gcmt/wildfire.vim'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Markdown
-Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
+Plug 'plasticboy/vim-markdown', {'for': ['markdown', 'vim-plug']} " Very good
+" Python
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for': ['python', 'vim-plug']}
 " C++
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['cpp', 'vim-plug']}
 " Json
 " Git
-Plug 'mhinz/vim-signify'
 "Other
-Plug 'frazrepo/vim-rainbow'
+Plug 'frazrepo/vim-rainbow', {'for': ['c', 'javascript', 'java', 'json', 'vim-plug']}  " rainbow ()
+Plug 'preservim/nerdcommenter', {'for': ['c', 'javascript', 'java', 'json', 'vim-plug']} " fast Annotation
 call plug#end()

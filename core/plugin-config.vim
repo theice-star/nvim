@@ -24,12 +24,12 @@ let g:dashboard_default_executive ='fzf'
 " ===
 let g:coc_global_extensions = [
 	\ 'coc-marketplace',
+	\ 'coc-lists',
 	\ 'coc-pairs',
 	\ 'coc-explorer',
 	\ 'coc-git',
 	\ 'coc-html',
 	\ 'coc-json',
-	\ 'coc-lists',
 	\ 'coc-prettier',
 	\ 'coc-pyright',
 	\ 'coc-python',
@@ -136,6 +136,38 @@ let g:snips_author = 'TheIce-Star'
 
 
 " ===
+" === FZF.vim
+" ===
+let g:fzf_preview_window = 'right:60%'
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+
+" ===
+" === LeaderF
+" ===
+let g:Lf_PreviewInPopup = 1
+let g:Lf_PreviewCode = 1
+let g:Lf_ShowHidden = 1
+let g:Lf_ShowDevIcons = 1
+nnoremap <c-p> :Leaderf file --popup<cr>
+nnoremap <leader>b :Leaderf buffer --popup<cr>
+nnoremap <leader>fm :Leaderf mru --popup<cr>
+nnoremap <leader>ff :Leaderf function --popup<cr>
+nnoremap <leader>ft :Leaderf tag --pupup<cr>
+let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': 'Fira Code' }
+let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_WorkingDirectoryMode = 'Ac'
+let g:Lf_WindowHeight = 0.30
+let g:Lf_CacheDirectory = expand('~/.vim/cache')
+let g:Lf_ShowRelativePath = 0
+let g:Lf_HideHelp = 1
+let g:Lf_StlColorscheme = 'powerline'
+let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
+
+
+
+
+" ===
 " === Undotree
 " ===
 nnoremap ut :UndotreeToggle<CR>
@@ -159,42 +191,26 @@ endfunc
 
 
 " ===
-" === FZF.vim
+" === markdown preview
 " ===
-let g:fzf_preview_window = 'right:60%'
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+" pass
+
+" ===
+" === vim-table-mode
+" ===
+nnoremap <leader>tm :TableModeToggle<cr>
 
 
-" ===
-" === LeaderF
-" ===
-let g:Lf_PreviewInPopup = 1
-nnoremap <leader>f :Leaderf file --popup<cr>
-nnoremap <leader>b :Leaderf buffer --poup<cr>
-nnoremap <leader>fm :Leaderf mru --popup<cr>
-nnoremap <leader>ff :Leaderf function --popup<cr>
-nnoremap <leader>ft :Leaderf tag --pupup<cr>
-let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': 'Fira Code' }
 
-let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
-let g:Lf_WorkingDirectoryMode = 'Ac'
-let g:Lf_WindowHeight = 0.30
-let g:Lf_CacheDirectory = expand('~/.vim/cache')
-let g:Lf_ShowRelativePath = 0
-let g:Lf_HideHelp = 1
-let g:Lf_StlColorscheme = 'powerline'
-let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 " ===
-" === asyncrun
+" === vim-markdown
 " ===
-" auto open asyncrun , hight is 6
-let g:asyncrun_open = 6
-
-" over time
-let g:asyncrun_bell = 1
-
-" set map noremal <F10> to open asyncrun
-nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
 
 
 
@@ -202,3 +218,32 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 " === vim-rainbow
 " ===
 let g:rainbow_active = 1
+
+
+
+" ===
+" === nerdcommenter
+" ===
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }}
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
