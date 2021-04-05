@@ -2,7 +2,7 @@
 " === Dress up my vim
 " ===
 " set thme
-colorscheme deus
+colorscheme oceanic_material
 set background=dark
 " set status line
 let g:spaceline_seperate_style = 'none'
@@ -10,20 +10,30 @@ let g:spaceline_colorscheme = 'space'
 " ===
 " === dashboard
 " ===
-let g:dashboard_default_header='transformer'
-
+let g:dashboard_custom_header = [
+\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+\]
+let g:dashboard_default_executive ='fzf'
 " ===
 " === Coc.nvim
 " ===
 let g:coc_global_extensions = [
+	\ 'coc-marketplace',
 	\ 'coc-pairs',
 	\ 'coc-explorer',
+	\ 'coc-git',
 	\ 'coc-html',
 	\ 'coc-json',
 	\ 'coc-lists',
 	\ 'coc-prettier',
 	\ 'coc-pyright',
 	\ 'coc-python',
+	\ 'coc-tsserver',
 	\ 'coc-json',
 	\ 'coc-snippets',
 	\ 'coc-syntax',
@@ -40,14 +50,14 @@ set hidden
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=10
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-set signcolumn=yes
+set signcolumn=number
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -60,12 +70,10 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 " Make <CR> auto-select the first completion item and notify coc.nvim to
@@ -112,9 +120,10 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " ===
 " === Coc-plugins Keymaps
 " ===
-nnoremap <LEADER>e :CocCommand explorer<CR>
-nnoremap mm :CocList marketplace<CR>
-nnoremap tl :CocCommand translator.popup<CR>
+nnoremap <silent><leader>cc :CocCommand<cr>
+nnoremap <silent><leader>e :CocCommand explorer<cr>
+nnoremap <silent><leader>cm :CocList marketplace<cr>
+nnoremap <silent>tl :CocCommand translator.popup<cr>
 
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
@@ -152,20 +161,29 @@ endfunc
 " ===
 " === FZF.vim
 " ===
-nnoremap <C-p> :FZF<CR>
-
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 
-
 " ===
-" === vim-clap
+" === LeaderF
 " ===
-let g:clap_theme = 'material_design_dark'
+let g:Lf_PreviewInPopup = 1
+nnoremap <leader>f :Leaderf file --popup<cr>
+nnoremap <leader>b :Leaderf buffer --poup<cr>
+nnoremap <leader>fm :Leaderf mru --popup<cr>
+nnoremap <leader>ff :Leaderf function --popup<cr>
+nnoremap <leader>ft :Leaderf tag --pupup<cr>
+let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': 'Fira Code' }
 
-
-
+let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_WorkingDirectoryMode = 'Ac'
+let g:Lf_WindowHeight = 0.30
+let g:Lf_CacheDirectory = expand('~/.vim/cache')
+let g:Lf_ShowRelativePath = 0
+let g:Lf_HideHelp = 1
+let g:Lf_StlColorscheme = 'powerline'
+let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 " ===
 " === asyncrun
 " ===

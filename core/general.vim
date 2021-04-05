@@ -1,4 +1,21 @@
-" ====================
+"General settins{{{
+set mouse=nv                 " Disable mouse in command-line mode
+set report=0                 " Don't report on line changes
+set errorbells               " Trigger bell on error
+set visualbell               " Use visual bell instead of beeping
+set hidden                   " hide buffers when abandoned instead of unload
+set fileformats=unix,dos,mac " Use Unix as the standard file type
+set magic                    " For regular expressions turn magic on
+set path+=**                 " Directories to search when using gf and friends
+set isfname-==               " Remove =, detects filename in var=/foo/bar
+set virtualedit=block        " Position cursor anywhere in visual block
+set synmaxcol=2500           " Don't syntax highlight long lines
+set formatoptions+=1         " Don't break lines after a one-letter word
+set formatoptions-=t         " Don't auto-wrap text
+set formatoptions-=o         " Disable comment-continuation (normal 'o'/'O')
+set formatoptions+=j
+set encoding=utf-8  
+scriptencoding utf-8"
 " === Editor Setup ===
 " ====================
 " ===
@@ -35,7 +52,6 @@ set indentexpr=
 set foldmethod=indent
 set foldlevel=99
 set foldenable
-set formatoptions-=tc
 set splitright
 set splitbelow
 set noshowmode
@@ -89,6 +105,3 @@ let g:terminal_color_11 = '#F4F99D'
 let g:terminal_color_12 = '#CAA9FA'
 let g:terminal_color_13 = '#FF92D0'
 let g:terminal_color_14 = '#9AEDFE'
-
-
-
