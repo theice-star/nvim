@@ -24,11 +24,14 @@ endfunction
 function utils#Complete()
 	execute "w"
 	if &filetype == 'c'
-		execute "!gcc % -o $<"
-		execute "!time ./%<"
+		set splitbelow
+		execute "!gcc % -o %<"
+		:split
+		:res -10
+		:term ./%<
 	elseif &filetype == 'cpp'
 		set splitbelow
-		execute "!g++ -std=c++11 % -Wall -o $<"
+		execute "!g++ -std=c++11 % -Wall -o %<"
 		:sp
 		:res -15
 		:term ./%<
