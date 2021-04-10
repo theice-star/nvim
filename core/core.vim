@@ -62,13 +62,7 @@ endif
 " === Any source
 " ===
 
-" source $HOME/.config/nvim/core/general.vim
 call utils#source_file($VIM_PATH, 'core/general.vim')
 call utils#source_file($VIM_PATH, 'core/plugins.vim')
 call utils#source_file($VIM_PATH, 'core/plugin-config.vim')
 call utils#source_file($VIM_PATH, 'keybinds/keybinds.vim')
-source $HOME/.config/nvim/md-snippets.vim
-" ===
-" === autocmd
-" ===
-autocmd BufRead,BufNewFile *.md setlocal spell
