@@ -63,6 +63,6 @@ endif
 " ===
 
 call utils#source_file($VIM_PATH, 'core/general.vim')
-call utils#source_file($VIM_PATH, 'core/plugins.vim')
-call utils#source_file($VIM_PATH, 'core/plugin-config.vim')
+call utils#source_file($VIM_PATH, 'core/plug.vim')
+call utils#source_file($VIM_PATH, 'core/plug-config.vim')
 call utils#source_file($VIM_PATH, 'keybinds/keybinds.vim')

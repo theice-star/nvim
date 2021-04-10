@@ -4,61 +4,44 @@
 " Functions
 nnoremap r :call utils#Complete()<CR>
 " Set <LEADER> as <SPACE>, ; as :
-let mapleader=" "
 noremap ; :
 
 " Save & quit
-noremap Q :q<CR>
-noremap <C-q> :qa<CR>
-noremap S :w<CR>
+noremap <c-q> :q<CR>
+noremap <c-s> :w<CR>
 
 " Open the vimrc file anytime
 noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
-noremap <LEADER>rv :e .nvimrc<CR>
 
 " Source Nvimrc everywhere
-nnoremap <LEADER>R :source $MYVIMRC<CR>
-
-" make Y to copy till the end of the line
-nnoremap Y y$
+nnoremap <silent> <LEADER>R :source $MYVIMRC<CR>
 
 " make Y to copy till the end of the line
 nnoremap Y y$
 
 " Indentation
-nnoremap < <<
-nnoremap > >>
+nnoremap < :<<
+nnoremap > :>>
 
-" Search
+" Search hightlight
 noremap <LEADER><CR> :nohlsearch<CR>
 
 " Adjacent duplicate words
 noremap <LEADER>dw /\(\<\w\+\>\)\_s*\1
-
-" Space to Tab
-nnoremap <LEADER>tt :%s/    /\t/g
-vnoremap <LEADER>tt :s/    /\t/g
-
 
 
 " ===
 " === Cursor Movement
 " ===
 " New cursor movement (the default arrow keys are used for resizing windows)
-"     ^
-"     K
-" < H   L >
-"     J
-"     v
+"	    ^
+"	    K
+"|< H   L >
+"	    J
+"	    v
 
-" U/E keys for 5 times u/e (faster navigation)
 noremap <silent> K 5k
 noremap <silent> J 5j
-
-" N key: go to the start of the line
-noremap <silent> N 0
-" I key: go to the end of the line
-noremap <silent> I $
 
 
 
@@ -82,14 +65,11 @@ noremap = n
 " ===
 " Use <space> + new arrow keys for moving the cursor around windows
 noremap <LEADER>w <C-w>w
+noremap <LEADER>h <C-w>h
 noremap <LEADER>k <C-w>k
 noremap <LEADER>j <C-w>j
-noremap <LEADER>h <C-w>h
 noremap <LEADER>l <C-w>l
 noremap qf <C-w>o
-
-" Disable the default s key
-noremap s <nop>
 
 " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
 noremap sk :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
@@ -120,11 +100,7 @@ nnoremap tc :tabclose<CR>
 
 
 
+" ===
+" === Plugin Config
+" ===
 
-" ===
-" === Plugins mapping
-" ===
-nnoremap <silent> <Leader>e
-  \ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
-nnoremap <silent> <Leader>F
-  \ :<C-u>Defx -resume -buffer-name=tab`tabpagenr()` -search=`expand('%:p')`<CR>

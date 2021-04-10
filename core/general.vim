@@ -42,7 +42,9 @@ set showcmd
 set wildmenu
 set ignorecase
 set smartcase
-set shortmess+=c
+set encoding=utf-8
+set signcolumn=number
+set cmdheight=2
 set inccommand=split
 set completeopt=longest,noinsert,menuone,noselect,preview
 set ttyfast "should make scrolling faster
@@ -58,7 +60,7 @@ if has('persistent_undo')
 	set undodir=~/.config/nvim/tmp/undo,.
 endif
 set colorcolumn=100
-set updatetime=100
+set updatetime=10
 set virtualedit=block
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

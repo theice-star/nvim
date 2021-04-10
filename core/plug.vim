@@ -17,9 +17,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': ['Leaderf']}
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 
-" File Tree
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'kristijanhusak/defx-icons'
 " Functions tree
 Plug 'liuchengxu/vista.vim'
 
