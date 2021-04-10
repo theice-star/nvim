@@ -10,6 +10,10 @@
 set nocompatible
 
 let $VIM_PATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
+let $THINKVIM = expand($HOME.'/.thinkvim.d/')
+
+" set the user config file
+let s:user_init_config = expand($THINKVIM.'/init.vim')
 
 " Disable vim distribution plugins
 let g:loaded_gzip = 1
@@ -58,11 +62,11 @@ endif
 " === Any source
 " ===
 
-source $HOME/.config/nvim/core/general.vim
-source $HOME/.config/nvim/core/plugins.vim
-source $HOME/.config/nvim/core/plugin-config.vim
-source $HOME/.config/nvim/keybinds/keybinds.vim
-
+" source $HOME/.config/nvim/core/general.vim
+call utils#source_file($VIM_PATH, 'core/general.vim')
+call utils#source_file($VIM_PATH, 'core/plugins.vim')
+call utils#source_file($VIM_PATH, 'core/plugin-config.vim')
+call utils#source_file($VIM_PATH, 'keybinds/keybinds.vim')
 source $HOME/.config/nvim/md-snippets.vim
 " ===
 " === autocmd

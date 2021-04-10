@@ -4,21 +4,33 @@
 " set thme
 colorscheme oceanic_material
 set background=dark
-" set status line
-let g:spaceline_seperate_style = 'none'
-let g:spaceline_colorscheme = 'space'
+
+
+
+" ===
+" === eleline
+" ===
+let g:eleline_powerline_fonts = 1
+let g:eleline_slim = 1
+
+
+
 " ===
 " === dashboard
 " ===
-let g:dashboard_custom_header = [
-\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-\]
-let g:dashboard_default_executive ='fzf'
+let g:dashboard_custom_header =[
+    \'          ▀████▀▄▄              ▄█ ',
+    \'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
+    \'    ▄        █          ▀▀▀▀▄  ▄▀  ',
+    \'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
+    \'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
+    \'  ▀▄     ▀▄  █     ▀██▀     ██▄█   ',
+    \'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
+    \'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
+    \'   █   █  █      ▄▄           ▄▀   ',
+    \'             TheIce-Star           ',
+    \]
+let g:dashboard_default_executive ='clap'
 " ===
 " === Coc.nvim
 " ===
@@ -164,6 +176,38 @@ let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
+
+
+
+" ===
+" === Vim-clap
+" ===
+let g:clap_cache_directory = $DATA_PATH . '/clap'
+let g:clap_theme = 'material_design_dark'
+let g:clap_current_selection_sign= { 'text': '➤', 'texthl': "ClapCurrentSelectionSign", "linehl": "ClapCurrentSelection"}
+let g:clap_layout = { 'relative': 'editor' }
+let g:clap_enable_icon = 1
+let g:clap_search_box_border_style = 'curve'
+let g:clap_provider_grep_enable_icon = 1
+let g:clap_prompt_format = '%spinner%%forerunner_status% %provider_id%: '
+
+" A funtion to config highlight of ClapSymbol
+" when the background color is opactiy
+function! s:ClapSymbolHL() abort
+    let s:current_bgcolor = synIDattr(hlID("Normal"), "bg")
+    if s:current_bgcolor == ''
+        hi ClapSymbol guibg=NONE ctermbg=NONE
+    endif
+endfunction
+
+autocmd User ClapOnEnter call s:ClapSymbolHL()
+
+
+
+" ===
+" === Defx
+" ===
+source $HOME/.config/nvim/modules/modules-defx.vim
 
 
 

@@ -8,15 +8,21 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'glepnir/oceanic-material'
 
 " Status line
-Plug 'glepnir/spaceline.vim'
+Plug 'liuchengxu/eleline.vim'
 Plug 'ryanoasis/vim-devicons'
 
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " File Search
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': ['Leaderf']}
-Plug 'junegunn/fzf.vim', {'on': ['FZF']}
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+
 " File Tree
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'kristijanhusak/defx-icons'
+" Functions tree
+Plug 'liuchengxu/vista.vim'
+
 " Snippets
 Plug 'honza/vim-snippets'
 " Undo Tree

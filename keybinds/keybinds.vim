@@ -117,3 +117,14 @@ nnoremap tn :+tabnext<CR>
 nnoremap tmn :-tabmove<CR>
 nnoremap tmi :+tabmove<CR>
 nnoremap tc :tabclose<CR>
+
+
+
+
+" ===
+" === Plugins mapping
+" ===
+nnoremap <silent> <Leader>e
+  \ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
+nnoremap <silent> <Leader>F
+  \ :<C-u>Defx -resume -buffer-name=tab`tabpagenr()` -search=`expand('%:p')`<CR>
