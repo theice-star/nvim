@@ -4,12 +4,13 @@
 call plug#begin('~/.config/nvim/plugged/')
 " Start time
 Plug 'glepnir/dashboard-nvim'
+
 " Pretty Dress
 Plug 'glepnir/oceanic-material'
 
 " Status line
-Plug 'liuchengxu/eleline.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'glepnir/spaceline.vim'
 
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -18,7 +19,7 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': ['Leaderf']}
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 
 " Functions tree
-Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim', {'on': ['Vista']}
 
 " Snippets
 Plug 'honza/vim-snippets'
