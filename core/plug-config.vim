@@ -2,35 +2,40 @@
 " === Dress up my vim
 " ===
 " set thme
-colorscheme oceanic_material
+colorscheme zephyr
 set background=dark
 
 
-
 " ===
-" === eleline
+" === status line
 " ===
-let g:eleline_powerline_fonts = 1
-let g:eleline_slim = 1
+let g:spaceline_seperate_style = 'slant'
+let g:spaceline_custom_vim_status =  {"n": "Normal ","V":"Visual-Line ","v":"Visual ","\<C-v>": "🅥 ","i":"Coding","R":"🅡 ","s":"🅢 ","t":"🅣 ","c":"Command ","!":"SE"}
 
 
 
 " ===
 " === dashboard
 " ===
-let g:dashboard_custom_header =[
-    \'          ▀████▀▄▄              ▄█ ',
-    \'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
-    \'    ▄        █          ▀▀▀▀▄  ▄▀  ',
-    \'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
-    \'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
-    \'  ▀▄     ▀▄  █     ▀██▀     ██▄█   ',
-    \'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
-    \'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
-    \'   █   █  █      ▄▄           ▄▀   ',
-    \'             TheIce-Star           ',
-    \]
-let g:dashboard_default_executive ='clap'
+let g:dashboard_custom_header = [
+      \'     ⠀⠀⠀⠀⠀⠀⠀⡴⠞⠉⢉⣭⣿⣿⠿⣳⣤⠴⠖⠛⣛⣿⣿⡷⠖⣶⣤⡀⠀⠀⠀  ',
+      \'   ⠀⠀⠀⠀⠀⠀⠀⣼⠁⢀⣶⢻⡟⠿⠋⣴⠿⢻⣧⡴⠟⠋⠿⠛⠠⠾⢛⣵⣿⠀⠀⠀⠀  ',
+      \'   ⣼⣿⡿⢶⣄⠀⢀⡇⢀⡿⠁⠈⠀⠀⣀⣉⣀⠘⣿⠀⠀⣀⣀⠀⠀⠀⠛⡹⠋⠀⠀⠀⠀  ',
+      \'   ⣭⣤⡈⢑⣼⣻⣿⣧⡌⠁⠀⢀⣴⠟⠋⠉⠉⠛⣿⣴⠟⠋⠙⠻⣦⡰⣞⠁⢀⣤⣦⣤⠀  ',
+      \'   ⠀⠀⣰⢫⣾⠋⣽⠟⠑⠛⢠⡟⠁⠀⠀⠀⠀⠀⠈⢻⡄⠀⠀⠀⠘⣷⡈⠻⣍⠤⢤⣌⣀  ',
+      \'   ⢀⡞⣡⡌⠁⠀⠀⠀⠀⢀⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⢿⡀⠀⠀⠀⠸⣇⠀⢾⣷⢤⣬⣉  ',
+      \'   ⡞⣼⣿⣤⣄⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⣿⠀⠸⣿⣇⠈⠻  ',
+      \'   ⢰⣿⡿⢹⠃⠀⣠⠤⠶⣼⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⣿⠀⠀⣿⠛⡄⠀  ',
+      \'   ⠈⠉⠁⠀⠀⠀⡟⡀⠀⠈⡗⠲⠶⠦⢤⣤⣤⣄⣀⣀⣸⣧⣤⣤⠤⠤⣿⣀⡀⠉⣼⡇⠀  ',
+      \'   ⣿⣴⣴⡆⠀⠀⠻⣄⠀⠀⠡⠀⠀⠀⠈⠛⠋⠀⠀⠀⡈⠀⠻⠟⠀⢀⠋⠉⠙⢷⡿⡇⠀  ',
+      \'   ⣻⡿⠏⠁⠀⠀⢠⡟⠀⠀⠀⠣⡀⠀⠀⠀⠀⠀⢀⣄⠀⠀⠀⠀⢀⠈⠀⢀⣀⡾⣴⠃⠀  ',
+      \'   ⢿⠛⠀⠀⠀⠀⢸⠁⠀⠀⠀⠀⠈⠢⠄⣀⠠⠼⣁⠀⡱⠤⠤⠐⠁⠀⠀⣸⠋⢻⡟⠀⠀  ',
+      \'   ⠈⢧⣀⣤⣶⡄⠘⣆⠀⠀⠀⠀⠀⠀⠀⢀⣤⠖⠛⠻⣄⠀⠀⠀⢀⣠⡾⠋⢀⡞⠀⠀⠀  ',
+      \'   ⠀⠀⠻⣿⣿⡇⠀⠈⠓⢦⣤⣤⣤⡤⠞⠉⠀⠀⠀⠀⠈⠛⠒⠚⢩⡅⣠⡴⠋⠀⠀⠀⠀  ',
+      \'   ⠀⠀⠀⠈⠻⢧⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣻⠿⠋⠀⠀⠀⠀⠀⠀  ',
+      \'   ⠀⠀⠀⠀⠀⠀⠉⠓⠶⣤⣄⣀⡀⠀⠀⠀⠀⠀⢀⣀⣠⡴⠖⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀  ',
+      \ ]
+let g:dashboard_default_executive ='fzf'
 " ===
 " === Coc.nvim
 " ===
@@ -62,7 +67,6 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 " ===
 " === LeaderF
 " ===
-let g:Lf_PreviewInPopup = 1
 let g:Lf_PreviewCode = 1
 let g:Lf_ShowHidden = 1
 let g:Lf_ShowDevIcons = 1
@@ -160,32 +164,3 @@ let g:vim_markdown_strikethrough = 1
 " === vim-rainbow
 " ===
 let g:rainbow_active = 1
-
-
-
-" ===
-" === nerdcommenter
-" ===
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }}
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1

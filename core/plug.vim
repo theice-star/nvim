@@ -6,18 +6,18 @@ call plug#begin('~/.config/nvim/plugged/')
 Plug 'glepnir/dashboard-nvim'
 
 " Pretty Dress
-Plug 'glepnir/oceanic-material'
+Plug 'glepnir/zephyr-nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " Status line
-Plug 'ryanoasis/vim-devicons'
 Plug 'glepnir/spaceline.vim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " File Search
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': ['Leaderf']}
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-
+Plug 'junegunn/fzf.vim'
 " Functions tree
 Plug 'liuchengxu/vista.vim', {'on': ['Vista']}
 
@@ -42,5 +42,5 @@ Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['cpp', 'vim-plug']}
 " Git
 "Other
 Plug 'frazrepo/vim-rainbow', {'for': ['c', 'javascript', 'java', 'json', 'vim-plug']}  " rainbow ()
-Plug 'preservim/nerdcommenter', {'for': ['c', 'javascript', 'java', 'json', 'vim-plug']} " fast Annotation
+Plug 'lambdalisue/suda.vim'
 call plug#end()
