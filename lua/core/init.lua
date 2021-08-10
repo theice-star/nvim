@@ -33,6 +33,7 @@ end
 require('core.general')
 require('core.plug')
 require('core.plug_config')
+require('lsp')
 
 -- Tudo: keybinds.lua 
 

@@ -26,6 +26,12 @@ return require('packer').startup(function()
   use {
     'glepnir/dashboard-nvim'
 }
+  use {
+    'nvim-lua/completion-nvim'
+}
+  use {
+    'neovim/nvim-lspconfig'
+}
 
 
 end)
